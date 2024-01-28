@@ -182,7 +182,6 @@ class _SearchFieldState extends State<SearchField> {
         // Hier kannst du bei Bedarf auf Änderungen im Suchfeld reagieren
         print('Suchbegriff: $value');
       },
-
       textAlign: TextAlign.start,
     );
   }
