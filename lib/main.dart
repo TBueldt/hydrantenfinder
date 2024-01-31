@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: Karten()));
+void main() => runApp(MaterialApp(home: Karte()));
 
-class Karten extends StatelessWidget {
+class Karte extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,6 +71,30 @@ class Karten extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+              top: 90.0,
+              left: 15.0,
+              child: GestureDetector(
+                onTap: () {
+                  // Aktion für den roten Block hier
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 30,
+                  height: 80,
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      'Hallo',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -113,7 +137,7 @@ class Liste extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Karten()),
+                      MaterialPageRoute(builder: (context) => Karte()),
                   );
                 },
 
@@ -148,11 +172,130 @@ class Liste extends StatelessWidget {
                 ),
               ),
             ),
-          ],
+            Positioned(
+              top: 90.0,
+              left: 15.0,
+              child: GestureDetector(
+                onTap: () {
+                  // Aktion für den roten Block hier
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 30,
+                  height: 80,
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      'Hallo',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 195.0,
+              left: 15.0,
+              child: GestureDetector(
+                onTap: () {
+                  // Aktion für den roten Block hier
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 30,
+                  height: 80,
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      'Hallo',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 300.0,
+              left: 15.0,
+              child: GestureDetector(
+                onTap: () {
+                  // Aktion für den roten Block hier
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 30,
+                  height: 80,
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      'Hallo',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 405.0,
+              left: 15.0,
+              child: GestureDetector(
+                onTap: () {
+                  // Aktion für den roten Block hier
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 30,
+                  height: 80,
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      'Hallo',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 510.0,
+              left: 15.0,
+              child: GestureDetector(
+                onTap: () {
+                  // Aktion für den roten Block hier
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 30,
+                  height: 80,
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      'Hallo',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ]
         ),
       ),
     );
-    ;
   }
 }
 
