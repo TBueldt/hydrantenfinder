@@ -12,7 +12,7 @@ class Karte extends StatelessWidget {
         leading: IconButton(
           padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
             onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
                 Icons.location_searching,
                 color: Colors.black,
                 size: 55.0,
@@ -31,13 +31,12 @@ class Karte extends StatelessWidget {
               top: 20.0, // Y-Position in Pixel
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.blue[400],
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
                   // Aktion für den Button hier
                 },
-                child: Text(
+                child: const Text(
                     'Karte',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -52,8 +51,7 @@ class Karte extends StatelessWidget {
               top: 20.0,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.red,
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.red,
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -61,7 +59,7 @@ class Karte extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => Liste()),
                   );
                 },
-                child: Text(
+                child: const Text(
                     'Liste',
                   style: TextStyle(
                   fontSize: 25.0,
@@ -82,7 +80,7 @@ class Karte extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -112,7 +110,7 @@ class Liste extends StatelessWidget {
         leading: IconButton(
             padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.location_searching,
               color: Colors.black,
               size: 55.0,
@@ -131,8 +129,7 @@ class Liste extends StatelessWidget {
               top: 20.0, // Y-Position in Pixel
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.red,
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.red,
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -141,7 +138,7 @@ class Liste extends StatelessWidget {
                   );
                 },
 
-                child: Text(
+                child: const Text(
                   'Karte',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -156,13 +153,12 @@ class Liste extends StatelessWidget {
               top: 20.0,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.blue[400],
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
                   // Aktion für den Button hier
                 },
-                child: Text(
+                child: const Text(
                   'Liste',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -183,7 +179,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -207,7 +203,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -231,7 +227,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -255,7 +251,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -279,7 +275,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -316,7 +312,7 @@ class _SearchFieldState extends State<SearchField> {
         hintText: 'Suche...',
         filled: true,
         fillColor: Colors.white,
-        prefixIcon: Icon(Icons.search),
+        prefixIcon: const Icon(Icons.search),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
