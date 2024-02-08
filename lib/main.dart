@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MaterialApp(home: Karte()));
 
 class Karte extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +77,7 @@ class Karte extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+               //   launch('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -93,6 +96,54 @@ class Karte extends StatelessWidget {
                 ),
               ),
             ),
+        /*   Positioned(
+              top: 180.0, // Passen Sie die Position an, um die Karte zu platzieren
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: OSMFlutter(
+                  controller:mapController,
+                  osmOption: OSMOption(
+                    userTrackingOption: UserTrackingOption(
+                      enableTracking: true,
+                      unFollowUser: false,
+                    ),
+                    zoomOption: ZoomOption(
+                      initZoom: 8,
+                      minZoomLevel: 3,
+                      maxZoomLevel: 19,
+                      stepZoom: 1.0,
+                    ),
+                    userLocationMarker: UserLocationMaker(
+                      personMarker: MarkerIcon(
+                        icon: Icon(
+                          Icons.location_history_rounded,
+                          color: Colors.red,
+                          size: 48,
+                        ),
+                      ),
+                      directionArrowMarker: MarkerIcon(
+                        icon: Icon(
+                          Icons.double_arrow,
+                          size: 48,
+                        ),
+                      ),
+                    ),
+                    roadConfiguration: RoadOption(
+                      roadColor: Colors.yellowAccent,
+                    ),
+                    markerOption: MarkerOption(
+                        defaultMarker: MarkerIcon(
+                          icon: Icon(
+                            Icons.person_pin_circle,
+                            color: Colors.blue,
+                            size: 56,
+                          ),
+                        )
+                    ),
+                  )
+              ),
+            );*/
           ],
         ),
       ),
@@ -173,7 +224,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  //   launch('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -197,7 +248,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  //   launch('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -221,7 +272,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  //   launch('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -245,7 +296,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  //   launch('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -269,7 +320,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  //   launch('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -301,7 +352,7 @@ class SearchField extends StatefulWidget {
 }
 
 class _SearchFieldState extends State<SearchField> {
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -325,6 +376,4 @@ class _SearchFieldState extends State<SearchField> {
     );
   }
 }
-
-
 
