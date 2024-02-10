@@ -19,7 +19,7 @@ class Karte extends StatelessWidget {
             )
         ),
         flexibleSpace: Padding(
-          padding: const EdgeInsets.only(left: 15.0, top: 56.0, right: 110.0, bottom: 0.0),
+          padding: const EdgeInsets.only(left: 15.0, top: 45.0, right: 110.0, bottom: 1.0),
           child: SearchField(),
         ),
       ),
@@ -31,8 +31,7 @@ class Karte extends StatelessWidget {
               top: 20.0, // Y-Position in Pixel
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.blue[400],
+                  fixedSize: Size(160, 50), backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
                   // Aktion für den Button hier
@@ -52,8 +51,7 @@ class Karte extends StatelessWidget {
               top: 20.0,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.red,
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.red,
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -119,7 +117,7 @@ class Liste extends StatelessWidget {
             )
         ),
         flexibleSpace: Padding(
-          padding: const EdgeInsets.only(left: 15.0, top: 56.0, right: 110.0, bottom: 0.0),
+          padding: const EdgeInsets.only(left: 15.0, top: 45.0, right: 110.0, bottom: 1.0),
           child: SearchField(),
         ),
       ),
@@ -131,8 +129,7 @@ class Liste extends StatelessWidget {
               top: 20.0, // Y-Position in Pixel
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.red,
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.red,
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -156,8 +153,7 @@ class Liste extends StatelessWidget {
               top: 20.0,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50),
-                  primary: Colors.blue[400],
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
                   // Aktion für den Button hier
