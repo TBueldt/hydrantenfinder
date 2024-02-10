@@ -1,4 +1,6 @@
+import 'package:Hydrantenfinder/algorithmen.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MaterialApp(home: Karte()));
 
@@ -11,7 +13,9 @@ class Karte extends StatelessWidget {
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
           padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
-            onPressed: () {},
+            onPressed: () {
+              algorithmen().momStandort();
+            },
           icon: Icon(
                 Icons.location_searching,
                 color: Colors.black,
@@ -73,8 +77,8 @@ class Karte extends StatelessWidget {
               top: 90.0,
               left: 15.0,
               child: GestureDetector(
-                onTap: () {
-                  // Aktion für den roten Block hier
+                onTap: (){
+                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -109,7 +113,9 @@ class Liste extends StatelessWidget {
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
             padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
-            onPressed: () {},
+            onPressed: () {
+              algorithmen().momStandort();
+            },
             icon: Icon(
               Icons.location_searching,
               color: Colors.black,
@@ -173,7 +179,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -197,7 +203,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -221,7 +227,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -245,7 +251,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -269,7 +275,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  // Aktion für den roten Block hier
+                  launch('https://www.google.com/maps/search/?api=1&query=59.325,5.917');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
