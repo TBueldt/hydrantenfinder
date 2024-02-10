@@ -17,6 +17,7 @@ class Karte extends StatelessWidget {
               algorithmen().momStandort();
             },
           icon: Icon(
+
                 Icons.location_searching,
                 color: Colors.black,
                 size: 55.0,
@@ -40,7 +41,7 @@ class Karte extends StatelessWidget {
                 onPressed: () {
                   // Aktion für den Button hier
                 },
-                child: Text(
+                child: const Text(
                     'Karte',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -63,7 +64,7 @@ class Karte extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => Liste()),
                   );
                 },
-                child: Text(
+                child: const Text(
                     'Liste',
                   style: TextStyle(
                   fontSize: 25.0,
@@ -84,7 +85,7 @@ class Karte extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -113,6 +114,7 @@ class Liste extends StatelessWidget {
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
             padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
+
             onPressed: () {
               algorithmen().momStandort();
             },
@@ -144,7 +146,7 @@ class Liste extends StatelessWidget {
                   );
                 },
 
-                child: Text(
+                child: const Text(
                   'Karte',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -164,7 +166,7 @@ class Liste extends StatelessWidget {
                 onPressed: () {
                   // Aktion für den Button hier
                 },
-                child: Text(
+                child: const Text(
                   'Liste',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -185,7 +187,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -209,7 +211,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -233,7 +235,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -257,7 +259,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -281,7 +283,7 @@ class Liste extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 30,
                   height: 80,
                   color: Colors.red,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Hallo',
                       style: TextStyle(
@@ -318,7 +320,7 @@ class _SearchFieldState extends State<SearchField> {
         hintText: 'Suche...',
         filled: true,
         fillColor: Colors.white,
-        prefixIcon: Icon(Icons.search),
+        prefixIcon: const Icon(Icons.search),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
