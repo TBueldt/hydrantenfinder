@@ -12,18 +12,20 @@ class Karte extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
-          padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
-            onPressed: () {
-
-            },
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Liste()),
+            );
+              },
           icon: Icon(
-                Icons.location_searching,
-                color: Colors.black,
-                size: 55.0,
-            )
+            Icons.location_searching,
+            color: Colors.red,
+            size: 50.0,
+          ),
         ),
         flexibleSpace: Padding(
-          padding: const EdgeInsets.only(left: 15.0, top: 45.0, right: 110.0, bottom: 1.0),
+          padding: const EdgeInsets.only(left: 80.0, top: 45.0, right: 15.0, bottom: 0.0),
           child: SearchField(),
         ),
       ),
@@ -38,7 +40,7 @@ class Karte extends StatelessWidget {
                   fixedSize: Size(160, 50), backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
-                  // Aktion für den Button hier
+
                 },
                 child: Text(
                     'Karte',
@@ -112,18 +114,20 @@ class Liste extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
-            padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
-            onPressed: () {
-
-            },
-            icon: Icon(
-              Icons.location_searching,
-              color: Colors.black,
-              size: 55.0,
-            )
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Liste()),
+            );
+          },
+          icon: Icon(
+            Icons.location_searching,
+            color: Colors.red,
+            size: 50.0,
+          ),
         ),
         flexibleSpace: Padding(
-          padding: const EdgeInsets.only(left: 15.0, top: 45.0, right: 110.0, bottom: 1.0),
+          padding: const EdgeInsets.only(left: 80.0, top: 45.0, right: 15.0, bottom: 0.0),
           child: SearchField(),
         ),
       ),
@@ -318,14 +322,17 @@ class _SearchFieldState extends State<SearchField> {
         hintText: 'Suche...',
         filled: true,
         fillColor: Colors.white,
-        prefixIcon: Icon(Icons.search),
+        prefixIcon: GestureDetector(
+          onTap: () {
+            print('Suchbegriff: ${_searchController.text}');
+          },
+          child: Icon(Icons.search),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),
       onChanged: (value) {
-        // Hier kannst du bei Bedarf auf Änderungen im Suchfeld reagieren
-        print('Suchbegriff: $value');
       },
       textAlign: TextAlign.start,
     );
