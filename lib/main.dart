@@ -14,7 +14,7 @@ class Karte extends StatelessWidget {
         leading: IconButton(
           padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
             onPressed: () {
-              algorithmen().momStandort();
+
             },
           icon: Icon(
                 Icons.location_searching,
@@ -114,7 +114,7 @@ class Liste extends StatelessWidget {
         leading: IconButton(
             padding: const EdgeInsets.only(left: 320.0,top: 0.0, right: 15.0),
             onPressed: () {
-              algorithmen().momStandort();
+
             },
             icon: Icon(
               Icons.location_searching,
