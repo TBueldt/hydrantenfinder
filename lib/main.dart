@@ -2,6 +2,7 @@ import 'package:Hydrantenfinder/algorithmen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 void main() => runApp(MaterialApp(home: Karte()));
 
 class Karte extends StatelessWidget {
@@ -12,12 +13,10 @@ class Karte extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Liste()),
-            );
-              },
+          onPressed: ()
+          async {
+            void coordinates = await Algorithmen().standortJetzt();
+          },
           icon: Icon(
             Icons.location_searching,
             color: Colors.red,
@@ -114,11 +113,8 @@ class Liste extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Liste()),
-            );
+          onPressed: () async {
+            void coordinates = await Algorithmen().standortJetzt();
           },
           icon: Icon(
             Icons.location_searching,
@@ -323,8 +319,10 @@ class _SearchFieldState extends State<SearchField> {
         filled: true,
         fillColor: Colors.white,
         prefixIcon: GestureDetector(
-          onTap: () {
-            print('Suchbegriff: ${_searchController.text}');
+          onTap: ()
+            async {
+              String coordinates = await Algorithmen().suchfeldeingabeInCords(_searchController.text);
+              _searchController.clear();
           },
           child: Icon(Icons.search),
         ),
