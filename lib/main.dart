@@ -235,7 +235,7 @@ class Liste extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Hallo',
+                      'Wasserstelle:',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -321,7 +321,7 @@ class _SearchFieldState extends State<SearchField> {
         prefixIcon: GestureDetector(
           onTap: ()
             async {
-              String coordinates = await Algorithmen().suchfeldeingabeInCords(_searchController.text);
+              await Algorithmen().suchfeldeingabeInCords(_searchController.text);
               _searchController.clear();
           },
           child: Icon(Icons.search),
