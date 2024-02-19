@@ -5,18 +5,22 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:csv/csv.dart';
 
 class Algorithmen {
-  static final Algorithmen _singleton = Algorithmen._internal();
+  static final Algorithmen singleton = Algorithmen._internal();
   List<List<dynamic>> hydrant = [];
 
   factory Algorithmen() {
-    return _singleton;
+    return singleton;
   }
-  Algorithmen._internal();
+  Algorithmen._internal() {
+    // Initialisieren Sie das 'hydrant' Array mit leeren Arrays
+    for (int i = 0; i < 10; i++) {
+      hydrant.add(List.filled(10, 0));
+    }
+  }
 
  Future<void> standortJetzt() async {
       Position stjetzt = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
-      print(stjetzt);
       parseCsvAndCalculateDistance(stjetzt.latitude, stjetzt.longitude);
     }
 
@@ -30,8 +34,6 @@ class Algorithmen {
       if (jsonResponse.isNotEmpty) {
         double lat = double.parse(jsonResponse[0]['lat']);
         double lon = double.parse(jsonResponse[0]['lon']);
-        print(lat);
-        print(lon);
         parseCsvAndCalculateDistance(lat, lon);
         return;
       } else {
@@ -59,7 +61,7 @@ class Algorithmen {
       if (csvData[i].length >= 4) {
         double hydrantLat = double.tryParse(csvData[i][2].toString()) ?? 0.0;
         double hydrantLon = double.tryParse(csvData[i][3].toString()) ?? 0.0;
-        double distance = await calculateDistance(lat, lon, hydrantLat, hydrantLon);
+        int distance = await calculateDistance(lat, lon, hydrantLat, hydrantLon);
         csvData[i].add(distance);
       } else {
         throw Exception('Die CSV-Daten haben nicht die erwartete Anzahl von Spalten.');
@@ -76,8 +78,9 @@ class Algorithmen {
     });
   }
 
-  Future<double> calculateDistance(double lat1, double lon1, double lat2, double lon2) async {
-    return Geolocator.distanceBetween(lat1, lon1, lat2, lon2);
+  Future<int> calculateDistance(double lat1, double lon1, double lat2, double lon2) async {
+    double distance = await Geolocator.distanceBetween(lat1, lon1, lat2, lon2);
+    return distance.floor();
   }
 }
 

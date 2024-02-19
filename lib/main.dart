@@ -2,8 +2,12 @@ import 'package:Hydrantenfinder/algorithmen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+void main() async {
+  // Hier wird der gewünschte asynchrone Code ausgeführt
+  runApp(MaterialApp(home: Karte()));
+  void coordinates = await Algorithmen().standortJetzt();
+}
 
-void main() => runApp(MaterialApp(home: Karte()));
 
 class Karte extends StatelessWidget {
   @override
@@ -16,6 +20,10 @@ class Karte extends StatelessWidget {
           onPressed: ()
           async {
             void coordinates = await Algorithmen().standortJetzt();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Karte()),
+            );
           },
           icon: Icon(
             Icons.location_searching,
@@ -79,7 +87,7 @@ class Karte extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: (){
-                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
+                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[1][2]},${Algorithmen().hydrant[1][3]}');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -87,7 +95,7 @@ class Karte extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Hallo',
+                      'Wasserstelle:${Algorithmen().hydrant[1][1]} \n Entfernung: ${Algorithmen().hydrant[1][4]} Meter',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -115,6 +123,10 @@ class Liste extends StatelessWidget {
         leading: IconButton(
           onPressed: () async {
             void coordinates = await Algorithmen().standortJetzt();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Liste()),
+            );
           },
           icon: Icon(
             Icons.location_searching,
@@ -179,7 +191,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
+                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[1][2]},${Algorithmen().hydrant[1][3]}');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -187,7 +199,7 @@ class Liste extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Hallo',
+                      'Wasserstelle:${Algorithmen().hydrant[1][1]} \n Entfernung: ${Algorithmen().hydrant[1][4]} Meter',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -203,7 +215,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
+                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[2][2]},${Algorithmen().hydrant[2][3]}');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -211,7 +223,7 @@ class Liste extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Hallo',
+                      'Wasserstelle:${Algorithmen().hydrant[2][1]} \n Entfernung: ${Algorithmen().hydrant[2][4]} Meter',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -227,7 +239,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
+                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[3][2]},${Algorithmen().hydrant[3][3]}');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -235,7 +247,7 @@ class Liste extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Wasserstelle:',
+                      'Wasserstelle:${Algorithmen().hydrant[3][1]} \n Entfernung: ${Algorithmen().hydrant[3][4]} Meter',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -251,7 +263,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  launch('https://www.google.com/maps/search/?api=1&query=52.32,4.917');
+                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[4][2]},${Algorithmen().hydrant[4][3]}');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -259,7 +271,7 @@ class Liste extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Hallo',
+                      'Wasserstelle:${Algorithmen().hydrant[4][1]} \n Entfernung: ${Algorithmen().hydrant[4][4]} Meter',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -275,7 +287,7 @@ class Liste extends StatelessWidget {
               left: 15.0,
               child: GestureDetector(
                 onTap: () {
-                  launch('https://www.google.com/maps/search/?api=1&query=59.325,5.917');
+                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[5][2]},${Algorithmen().hydrant[5][3]}');
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width - 30,
@@ -283,7 +295,7 @@ class Liste extends StatelessWidget {
                   color: Colors.red,
                   child: Center(
                     child: Text(
-                      'Hallo',
+                      'Wasserstelle:${Algorithmen().hydrant[5][1]} \n Entfernung: ${Algorithmen().hydrant[5][4]} Meter',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
@@ -322,6 +334,10 @@ class _SearchFieldState extends State<SearchField> {
           onTap: ()
             async {
               await Algorithmen().suchfeldeingabeInCords(_searchController.text);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) => Karte()),
+              );
               _searchController.clear();
           },
           child: Icon(Icons.search),
