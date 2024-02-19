@@ -4,7 +4,7 @@
     <application
         android:label="Hydrantenfinder"
         android:name="${applicationName}"
-        android:icon="@mipmap/logo">
+        android:icon="@mipmap/Logo">
         <activity
             android:name=".MainActivity"
             android:exported="true"
