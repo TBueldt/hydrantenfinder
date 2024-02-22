@@ -1,15 +1,18 @@
 import 'package:Hydrantenfinder/algorithmen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 
 void main() async {
-  // Hier wird der gewünschte asynchrone Code ausgeführt
   runApp(MaterialApp(home: Karte()));
-  void coordinates = await Algorithmen().standortJetzt();
+    await Algorithmen().standortJetzt();
 }
 
 
 class Karte extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +22,7 @@ class Karte extends StatelessWidget {
         leading: IconButton(
           onPressed: ()
           async {
-            void coordinates = await Algorithmen().standortJetzt();
+            await Algorithmen().standortJetzt();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Karte()),
@@ -106,10 +109,33 @@ class Karte extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+              top: 190.0,
+              left: 5.0,
+              right: 5.0,
+              bottom: 5.0,
+              child:FlutterMap(
+                mapController: MapController(
+                ),
+                options: MapOptions(
+                  initialZoom: 13.0,
+                  initialCenter: LatLng(49.00, 8.00),
+                ),
+                children: [
+                  TileLayer(
+                    urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+                    // Plenty of other options available!
+                  ),
+                ],
+              ),
+            ),
           ],
+          ),
         ),
-      ),
-      );
+    );
+
+
   }
 }
 class Liste extends StatelessWidget {
@@ -122,7 +148,7 @@ class Liste extends StatelessWidget {
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
           onPressed: () async {
-            void coordinates = await Algorithmen().standortJetzt();
+            await Algorithmen().standortJetzt();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Liste()),

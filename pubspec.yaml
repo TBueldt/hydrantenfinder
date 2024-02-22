@@ -38,8 +38,9 @@ dependencies:
   url_launcher: ^6.2.4
   geolocator: ^7.6.2
   http: ^1.2.0
-  permission_handler: ^11.3.0
   csv: ^5.1.1
+  flutter_map: ^6.0.0
+  latlng: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
