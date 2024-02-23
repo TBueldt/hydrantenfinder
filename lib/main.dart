@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   runApp(MaterialApp(home: Karte()));
@@ -111,21 +112,19 @@ class Karte extends StatelessWidget {
             ),
             Positioned(
               top: 190.0,
-              left: 5.0,
-              right: 5.0,
-              bottom: 5.0,
+              left: 15.0,
+              right: 15.0,
+              bottom: 15.0,
               child:FlutterMap(
                 mapController: MapController(
                 ),
                 options: MapOptions(
-                  initialZoom: 13.0,
-                  initialCenter: LatLng(49.00, 8.00),
+                  initialZoom: 16.0,
+                  initialCenter: LatLng(Algorithmen().stortLat, Algorithmen().stortLon),
                 ),
                 children: [
                   TileLayer(
                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    userAgentPackageName: 'dev.fleaflet.flutter_map.example',
-                    // Plenty of other options available!
                   ),
                 ],
               ),

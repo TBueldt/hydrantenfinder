@@ -7,4 +7,13 @@ Bei einem Einsatz muss die Feuerwehr möglichst schnell reagieren um einen mögl
 ### 1.1 Anforderungsübersicht
 Die Hauptanforderung ist es eine App zur einfachen Hydrantensuche zu entwickeln, welche direkt die nächsten Hydranten anzeigt und bei Knopfdruck sich eine Navigation zu dem Hydranten hin startet. Ein weiteres Feature soll eine Kartenübersicht sein um ebenfalls weitere Hydranten zu finden, welche zwar nicht die nähsten sind, aber besser zum Einsatz passen, da der nähste zum Beispiel hinter Bahnschienen ist. Zudem soll die App möglichst einfach und intuitiv zu bedienen sein, da die Feuerwehrmänner im Einsatzfall unter Stress stehen und keine Zeit haben sich lange in die App einzuarbeiten. Außerdem müssen ebenfalls die Kosten möglichst niedrig gehalten werden, da Gemeinden nicht bereit sind, trotz inhärenten Vorteilen Geld für Apps auszugeben.
 ### 1.2 Qualitätsziele
-Um einen Feuerwehreinsatz optimal zu unterstützen ist es essentiell, dass die App schnell und möglichst stabil läuft. Abstürze und lange Ladezeiten können im ernstfall Menschen gefährden, weshalb es gilt diese garnicht erst aufkommen zu lassen.
+Um einen Feuerwehreinsatz optimal zu unterstützen ist es essentiell, dass die App schnell und möglichst stabil läuft. Abstürze und lange Ladezeiten können im ernstfall Menschen gefährden, weshalb es gilt diese garnicht erst aufkommen zu lassen. Zudem muss die App unter Android 11 lauffähig sein, damit eine möglichst große Anzahl an Feuerwehrmännern die App nutzen können
+
+## 2. Systemarchitektur
+### 2.1 Komponenten
+#### 2.1.1 
+
+## 3. Ablauf des Programm
+
+
+

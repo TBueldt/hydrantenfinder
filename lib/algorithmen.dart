@@ -18,9 +18,14 @@ class Algorithmen {
     }
   }
 
+  double stortLat = 0.0;
+  double stortLon = 0.0;
+
  Future<void> standortJetzt() async {
       Position stjetzt = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
+      stortLat = stjetzt.latitude;
+      stortLon = stjetzt.longitude;
       parseCsvAndCalculateDistance(stjetzt.latitude, stjetzt.longitude);
     }
 
@@ -34,6 +39,8 @@ class Algorithmen {
       if (jsonResponse.isNotEmpty) {
         double lat = double.parse(jsonResponse[0]['lat']);
         double lon = double.parse(jsonResponse[0]['lon']);
+        stortLat = lat;
+        stortLon = lon;
         parseCsvAndCalculateDistance(lat, lon);
         return;
       } else {
