@@ -66,6 +66,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - Hydrantendaten.CSV
+    - assets/H1.png
+    - assets/H2.png
+    - assets/H3.png
+    - assets/H4.png
+    - assets/H5.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

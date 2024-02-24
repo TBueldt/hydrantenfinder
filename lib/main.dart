@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:flutter/services.dart';
 
 void main() async {
   runApp(MaterialApp(home: Karte()));
@@ -125,6 +124,40 @@ class Karte extends StatelessWidget {
                 children: [
                   TileLayer(
                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  ),
+                  MarkerLayer(
+                    markers: [
+                      Marker(
+                        point: LatLng(Algorithmen().hydrant[1][2], Algorithmen().hydrant[1][3]),
+                        width: 80,
+                        height: 80,
+                        child: Image.asset('assets/H1.png'),
+                      ),
+                      Marker(
+                        point: LatLng(Algorithmen().hydrant[2][2], Algorithmen().hydrant[2][3]),
+                        width: 80,
+                        height: 80,
+                        child: Image.asset('assets/H2.png'),
+                      ),
+                      Marker(
+                        point: LatLng(Algorithmen().hydrant[3][2], Algorithmen().hydrant[3][3]),
+                        width: 80,
+                        height: 80,
+                        child: Image.asset('assets/H3.png'),
+                      ),
+                      Marker(
+                        point: LatLng(Algorithmen().hydrant[4][2], Algorithmen().hydrant[4][3]),
+                        width: 80,
+                        height: 80,
+                        child: Image.asset('assets/H4.png'),
+                      ),
+                      Marker(
+                        point: LatLng(Algorithmen().hydrant[5][2], Algorithmen().hydrant[5][3]),
+                        width: 80,
+                        height: 80,
+                        child: Image.asset('assets/H5.png'),
+                      ),
+                    ],
                   ),
                 ],
               ),

@@ -11,10 +11,15 @@ class Algorithmen {
   factory Algorithmen() {
     return singleton;
   }
+
   Algorithmen._internal() {
-    // Initialisieren Sie das 'hydrant' Array mit leeren Arrays
-    for (int i = 0; i < 10; i++) {
-      hydrant.add(List.filled(10, 0));
+
+    for (int i = 0; i < 6; i++) {
+      List<dynamic> innerList = [];
+      for (int j = 0; j < 5; j++) {
+        innerList.add(0.0);
+      }
+      hydrant.add(innerList);
     }
   }
 
@@ -55,8 +60,17 @@ class Algorithmen {
     List<List<dynamic>> csvData = await loadAndParseCsv();
     await addDistancesToCsvData(csvData, lat, lon);
     sortCsvDataByDistance(csvData);
-    hydrant = csvData;
+
+
+    hydrant = csvData.map((list) => list.map((item) {
+      try {
+        return double.parse(item.toString());
+      } catch (e) {
+        return item;
+      }
+    }).toList()).toList();
   }
+
 
   Future<List<List<dynamic>>> loadAndParseCsv() async {
     String csvString = await rootBundle.loadString('Hydrantendaten.CSV');
@@ -68,7 +82,7 @@ class Algorithmen {
       if (csvData[i].length >= 4) {
         double hydrantLat = double.tryParse(csvData[i][2].toString()) ?? 0.0;
         double hydrantLon = double.tryParse(csvData[i][3].toString()) ?? 0.0;
-        int distance = await calculateDistance(lat, lon, hydrantLat, hydrantLon);
+        double distance = await calculateDistance(lat, lon, hydrantLat, hydrantLon);
         csvData[i].add(distance);
       } else {
         throw Exception('Die CSV-Daten haben nicht die erwartete Anzahl von Spalten.');
@@ -85,10 +99,11 @@ class Algorithmen {
     });
   }
 
-  Future<int> calculateDistance(double lat1, double lon1, double lat2, double lon2) async {
+  Future<double> calculateDistance(double lat1, double lon1, double lat2, double lon2) async {
     double distance = await Geolocator.distanceBetween(lat1, lon1, lat2, lon2);
-    return distance.floor();
+    return double.parse((distance).toStringAsFixed(1));
   }
+
 }
 
 
