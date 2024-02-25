@@ -4,14 +4,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
-void main() async {
+void main() {
   runApp(MaterialApp(home: Karte()));
-    await Algorithmen().standortJetzt();
 }
 
-
 class Karte extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,7 @@ class Karte extends StatelessWidget {
               MaterialPageRoute(builder: (context) => Karte()),
             );
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.location_searching,
             color: Colors.red,
             size: 50.0,
@@ -36,7 +33,7 @@ class Karte extends StatelessWidget {
         ),
         flexibleSpace: Padding(
           padding: const EdgeInsets.only(left: 80.0, top: 45.0, right: 15.0, bottom: 0.0),
-          child: SearchField(),
+          child: Suchfeld(),
         ),
       ),
       body: Center(
@@ -47,13 +44,11 @@ class Karte extends StatelessWidget {
               top: 20.0, // Y-Position in Pixel
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  fixedSize: Size(160, 50), backgroundColor: Colors.blue[400],
+                  fixedSize: const Size(160, 50), backgroundColor: Colors.blue[400],
                 ),
-                onPressed: () {
-
-                },
-                child: Text(
-                    'Karte',
+                onPressed: () {},
+                child: const Text(
+                  'Karte',
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w500,
@@ -74,41 +69,41 @@ class Karte extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => Liste()),
                   );
-                },
-                child: Text(
-                    'Liste',
+              },
+                child: const Text(
+                  'Liste',
                   style: TextStyle(
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                  ),
                 ),
               ),
-            ),
-            Positioned(
-              top: 90.0,
-              left: 15.0,
-              child: GestureDetector(
-                onTap: (){
-                  launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[1][2]},${Algorithmen().hydrant[1][3]}');
-                },
-                child: Container(
-                  width: MediaQuery.of(context).size.width - 30,
-                  height: 80,
-                  color: Colors.red,
-                  child: Center(
-                    child: Text(
-                      'Wasserstelle:${Algorithmen().hydrant[1][1]} \n Entfernung: ${Algorithmen().hydrant[1][4]} Meter',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+              Positioned(
+                top: 90.0,
+                left: 15.0,
+                child: GestureDetector(
+                  onTap: (){
+                    launch('https://www.google.com/maps/search/?api=1&query=${Algorithmen().hydrant[1][2]},${Algorithmen().hydrant[1][3]}');
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width - 30,
+                    height: 80,
+                    color: Colors.red,
+                    child: Center(
+                      child: Text(
+                        'Wasserstelle:${Algorithmen().hydrant[1][1]} \n Entfernung: ${Algorithmen().hydrant[1][4]} Meter',
+                        style: const TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
             Positioned(
               top: 190.0,
               left: 15.0,
@@ -119,52 +114,52 @@ class Karte extends StatelessWidget {
                 ),
                 options: MapOptions(
                   initialZoom: 16.0,
-                  initialCenter: LatLng(Algorithmen().stortLat, Algorithmen().stortLon),
+                  initialCenter: LatLng(Algorithmen().standortLat, Algorithmen().standortLon),
                 ),
                 children: [
                   TileLayer(
                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                   ),
-                  MarkerLayer(
-                    markers: [
-                      Marker(
-                        point: LatLng(Algorithmen().hydrant[1][2], Algorithmen().hydrant[1][3]),
-                        width: 80,
-                        height: 80,
-                        child: Image.asset('assets/H1.png'),
-                      ),
-                      Marker(
-                        point: LatLng(Algorithmen().hydrant[2][2], Algorithmen().hydrant[2][3]),
-                        width: 80,
-                        height: 80,
-                        child: Image.asset('assets/H2.png'),
-                      ),
-                      Marker(
-                        point: LatLng(Algorithmen().hydrant[3][2], Algorithmen().hydrant[3][3]),
-                        width: 80,
-                        height: 80,
-                        child: Image.asset('assets/H3.png'),
-                      ),
-                      Marker(
-                        point: LatLng(Algorithmen().hydrant[4][2], Algorithmen().hydrant[4][3]),
-                        width: 80,
-                        height: 80,
-                        child: Image.asset('assets/H4.png'),
-                      ),
-                      Marker(
-                        point: LatLng(Algorithmen().hydrant[5][2], Algorithmen().hydrant[5][3]),
-                        width: 80,
-                        height: 80,
-                        child: Image.asset('assets/H5.png'),
-                      ),
-                    ],
-                  ),
-                ],
+                    MarkerLayer(
+                      markers: [
+                        Marker(
+                          point: LatLng(Algorithmen().hydrant[1][2], Algorithmen().hydrant[1][3]),
+                          width: 80,
+                          height: 80,
+                          child: Image.asset('assets/H1.png'),
+                        ),
+                        Marker(
+                          point: LatLng(Algorithmen().hydrant[2][2], Algorithmen().hydrant[2][3]),
+                          width: 80,
+                          height: 80,
+                          child: Image.asset('assets/H2.png'),
+                        ),
+                        Marker(
+                          point: LatLng(Algorithmen().hydrant[3][2], Algorithmen().hydrant[3][3]),
+                          width: 80,
+                          height: 80,
+                          child: Image.asset('assets/H3.png'),
+                        ),
+                        Marker(
+                          point: LatLng(Algorithmen().hydrant[4][2], Algorithmen().hydrant[4][3]),
+                          width: 80,
+                          height: 80,
+                          child: Image.asset('assets/H4.png'),
+                        ),
+                        Marker(
+                          point: LatLng(Algorithmen().hydrant[5][2], Algorithmen().hydrant[5][3]),
+                          width: 80,
+                          height: 80,
+                          child: Image.asset('assets/H5.png'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
           ),
-        ),
+      ),
     );
 
 
@@ -183,10 +178,10 @@ class Liste extends StatelessWidget {
             await Algorithmen().standortJetzt();
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Liste()),
+              MaterialPageRoute(builder: (context) => Karte()),
             );
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.location_searching,
             color: Colors.red,
             size: 50.0,
@@ -194,7 +189,7 @@ class Liste extends StatelessWidget {
         ),
         flexibleSpace: Padding(
           padding: const EdgeInsets.only(left: 80.0, top: 45.0, right: 15.0, bottom: 0.0),
-          child: SearchField(),
+          child: Suchfeld(),
         ),
       ),
       body: Center(
@@ -214,7 +209,7 @@ class Liste extends StatelessWidget {
                   );
                 },
 
-                child: Text(
+                child: const Text(
                   'Karte',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -234,7 +229,7 @@ class Liste extends StatelessWidget {
                 onPressed: () {
                   // Aktion für den Button hier
                 },
-                child: Text(
+                child: const Text(
                   'Liste',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -258,7 +253,7 @@ class Liste extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Wasserstelle:${Algorithmen().hydrant[1][1]} \n Entfernung: ${Algorithmen().hydrant[1][4]} Meter',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
@@ -282,7 +277,7 @@ class Liste extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Wasserstelle:${Algorithmen().hydrant[2][1]} \n Entfernung: ${Algorithmen().hydrant[2][4]} Meter',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
@@ -306,7 +301,7 @@ class Liste extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Wasserstelle:${Algorithmen().hydrant[3][1]} \n Entfernung: ${Algorithmen().hydrant[3][4]} Meter',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
@@ -330,7 +325,7 @@ class Liste extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Wasserstelle:${Algorithmen().hydrant[4][1]} \n Entfernung: ${Algorithmen().hydrant[4][4]} Meter',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
@@ -354,7 +349,7 @@ class Liste extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Wasserstelle:${Algorithmen().hydrant[5][1]} \n Entfernung: ${Algorithmen().hydrant[5][4]} Meter',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
@@ -371,18 +366,18 @@ class Liste extends StatelessWidget {
   }
 }
 
-class SearchField extends StatefulWidget {
+class Suchfeld extends StatefulWidget {
   @override
-  _SearchFieldState createState() => _SearchFieldState();
+  Suchfeldstatus createState() => Suchfeldstatus();
 }
 
-class _SearchFieldState extends State<SearchField> {
-  TextEditingController _searchController = TextEditingController();
+class Suchfeldstatus extends State<Suchfeld> {
+  final TextEditingController _suchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: _searchController,
+      controller: _suchController,
       maxLines: 1,
       decoration: InputDecoration(
         hintText: 'Suche...',
@@ -391,14 +386,14 @@ class _SearchFieldState extends State<SearchField> {
         prefixIcon: GestureDetector(
           onTap: ()
             async {
-              await Algorithmen().suchfeldeingabeInCords(_searchController.text);
+              await Algorithmen().suchfeldEingabeInKoordinaten(_suchController.text);
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) => Karte()),
               );
-              _searchController.clear();
+              _suchController.clear();
           },
-          child: Icon(Icons.search),
+          child: const Icon(Icons.search),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
