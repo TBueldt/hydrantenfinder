@@ -152,6 +152,12 @@ class Karte extends StatelessWidget {
                           height: 80,
                           child: Image.asset('assets/H5.png'),
                         ),
+                        Marker(
+                          point: LatLng(Algorithmen().standortLat, Algorithmen().standortLon),
+                          width: 80,
+                          height: 80,
+                          child: Icon(Icons.location_on, color: Colors.red, size: 60.0),
+                        ),
                       ],
                     ),
                   ],
