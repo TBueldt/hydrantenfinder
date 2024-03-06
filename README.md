@@ -1,16 +1,45 @@
 # Entwicklung einer Hydrantensuchapp für die Nutzung als Feuerwehrmann
 
-## 1.Einleitung
+## 1. Einleitung
 
 Bei einem Einsatz ist eine schnelle Reaktion der Feuerwehr von entscheidender Bedeutung, um potenzielle Schäden so gering wie möglich zu halten. Dies stellt insbesondere für Freiwillige Feuerwehren eine Herausforderung dar, da die meisten Feuerwehrleute nebenbei noch einer Hauptbeschäftigung nachgehen und sich selten unmittelbar am Feuerwehrhaus aufhalten. Dies führt zu wertvollen Zeitverlusten, die über Leben und Tod oder den Unterschied zwischen einem Kleinbrand und der vollständigen Zerstörung eines Wohngebäudes entscheiden können. Auch bei der Ankunft am Einsatzort muss zunächst ein Überblick über die Situation und die Wasserversorgung gewonnen werden. Derzeit geschieht dies über einen Ordner mit verschiedenen Kartenabschnitten der Stadt oder des Dorfes. Die Suche nach dem richtigen Planquadrat und das letztendliche Auffinden des Hydranten kostet jedoch erneut wertvolle Zeit. Diese App zielt darauf ab, diese Zeit auf ein Minimum zu reduzieren und somit Leben zu retten und Schäden zu minimieren.
 
-### 1.1 Anforderungsübersicht
+### 1.1. Anforderungsübersicht
 
 Die primäre Anforderung besteht darin, eine App zur vereinfachten Suche nach Hydranten zu entwickeln, die unmittelbar die nächstgelegenen Hydranten anzeigt und auf Knopfdruck eine Navigation zu dem ausgewählten Hydranten startet. Ein zusätzliches Merkmal sollte eine Kartenübersicht sein, die es ermöglicht, weitere Hydranten zu finden, die zwar nicht die nächstgelegenen, aber für den Einsatz besser geeignet sind, beispielsweise weil der nächstgelegene Hydrant hinter Bahnschienen liegt. Die App sollte zudem so gestaltet sein, dass sie einfach und intuitiv zu bedienen ist, da die Feuerwehrleute im Einsatz unter Stress stehen und keine Zeit haben, sich ausführlich in die Nutzung der App einzuarbeiten. Darüber hinaus ist es wichtig, die Kosten so gering wie möglich zu halten, da Gemeinden trotz der inhärenten Vorteile nicht bereit sind, Geld für Apps auszugeben.
 
-### 1.2 Qualitätsziele
+### 1.2. Qualitätsziele
 
 Um einen Feuerwehreinsatz optimal zu unterstützen, ist es von entscheidender Bedeutung, dass die App schnell und möglichst stabil funktioniert. Abstürze und lange Ladezeiten können im Ernstfall Menschenleben gefährden, daher ist es unerlässlich, solche Probleme zu vermeiden. Darüber hinaus muss die App mit Android 10 kompatibel sein, um eine möglichst breite Nutzerbasis unter den Feuerwehrleuten zu gewährleisten und gleichzeitig die Integration neuester Sicherheitsfunktionen zu ermöglichen.
+
+## 3. Externe Ressourcen
+
+### 3.1. Geolocator
+
+Das Geolocator-Paket von Flutter, eine hochentwickelte Bibliothek von Google, bietet eine Vielzahl von Standortfunktionen für Flutter-Anwendungen. In der vorliegenden Anwendung wurden insbesondere die Funktionen distanceBetween() und getCurrentPosition() implementiert.
+
+Die Funktion distanceBetween() berechnet die direkte Entfernung zwischen zwei gegebenen Koordinatenpaaren. Sie nimmt als Parameter den Breiten- und Längengrad des Startpunktes sowie den Breiten- und Längengrad des Endpunktes entgegen und gibt einen double-Wert zurück, der die berechnete Entfernung repräsentiert.
+
+Die Funktion getCurrentPosition(), hingegen, erfasst die Standortdaten des GPS-Sensors des Smartphones und konvertiert diese Daten in Koordinaten. Der einzige Parameter, der hier angegeben werden kann, ist die desiredAccuracy, die die gewünschte Genauigkeit der Standortdaten bestimmt. Diese Funktion ermöglicht es der Anwendung, den aktuellen Standort des Benutzers mit der angegebenen Genauigkeit zu ermitteln.
+
+### 3.2. http
+
+## 4. Ablauf des Programms
+![Fließdiagramm](fließdiagramm.png)
+
+Der Mechanismus zur Suche von Hydranten in der Anwendung wird entweder durch eine Eingabe im Suchfeld oder durch das Betätigen des Standort-Buttons initiiert.
+
+Für den Standort-Button wird die Funktion Geolocator.getCurrentPosition() angewendet, um den aktuellen Standort des Benutzers zu ermitteln. Anschließend wird die Funktion _csvZuListeUmwandelnUndWeiterverarbeiten() mit den ermittelten Koordinaten als Parameter aufgerufen.
+
+Bei einer Eingabe in das Suchfeld wird diese Eingabe zunächst durch den verwendeten Geocoder Nominatim in Koordinaten umgewandelt. Diese Koordinaten werden dann als Parameter an die Funktion _csvZuListeUmwandelnUndWeiterverarbeiten() übergeben.
+
+Die Funktion _csvZuListeUmwandelnUndWeiterverarbeiten() ruft zunächst die Funktion _csvLadenUndParsen() auf, welche die Datei Hydrantendaten.CSV aus dem Rootbundle lädt und anschließend mit dem Werkzeug CsvToListConverter().convert() der CSV-Bibliothek in eine Liste umwandelt und parsed. Die zurückgegebene Liste vom Typ dynamic wird dann an die Funktion _distanzenZurListeHinzufuegen() übergeben, zusammen mit den Koordinaten aus dem Standort-Button oder der Suchfeldeingabe.
+
+Die Funktion _distanzenZurListeHinzufuegen() ruft dann für jeden Datensatz die Funktion _distanzBerechnen() auf, welche die Distanz zwischen den Koordinaten aus der CSV-Datei und den übergebenen Koordinaten berechnet. Dies geschieht mit dem Werkzeug Geolocator.distanceBetween() aus der Geolocator-Bibliothek. Anschließend fügt _distanzenZurListeHinzufuegen() zu jedem Datensatz an der Stelle [i][4] die berechnete Distanz in Metern hinzu.
+
+Schließlich ruft _csvZuListeUmwandelnUndWeiterverarbeiten() die Funktion _datenNachDistanzSortieren(csvData) mit der Liste als Parameter auf. Diese Funktion implementiert einen einfachen Sortieralgorithmus, der die Datensätze in der Liste nach Distanz sortiert und die sortierte Liste zurückgibt.
+
+Nach Abschluss aller Funktionsaufrufe wird die Liste der Variable Hydrant zugewiesen und schließlich zu einem Singleton umgewandelt, um die öffentliche Aufrufbarkeit der Variable zu ermöglichen. Abschließend können die Daten aus der Variable Hydrant sowohl für die Karte als auch für die Liste verwendet werden.
 
 ## 5. Durchführung von Laufzeittests
 
