@@ -18,13 +18,13 @@ Im Zuge des Designprozesses unserer App wurden drei zentrale Ziele festgelegt. E
 
 ## 2.1 Gestaltung der Karten-Seite
 
-![Erster-Entwurf](Skizze SW-Projekt.png)
+![Erster-Entwurf](SkizzeSW-Projekt.png)
 *Erster Entwurf der Kartenseite*
 
 ![Mockup Karte](MockupKarte.png)
 *Mockup der Kartenseite*
 
-![Endgültige Seite Karte](Endgültige Seite Karte.png)
+![Endgültige Seite Karte](EndgültigeSeiteKarte.png)
 *Endgültiges Design der Kartenseite*
 
 Die Gestaltung der Karten-Seite ist in vier Hauptbereiche unterteilt: die Appbar, die Navigation, den Weiterleitungsknopf und die Karte selbst.
@@ -42,7 +42,7 @@ Die Karte selbst besteht aus dem Tile-Layer von OpenStreetMap und sechs verschie
 ![Mockup Liste](MockupListe.png)
 *Mockup der Listen-Seite*
 
-![Endgültige Seite Liste](Endgültige Seite Liste.png)
+![Endgültige Seite Liste](EndgültigeSeiteListe.png)
 *Endgültiges Design der Listenseite*
 
 Die Liste wurde konzipiert, um die Auswahl von vier zusätzlichen Hydranten zu ermöglichen. Obwohl eine umfangreichere Liste mit mehr Hydranten theoretisch sinnvoll erscheinen könnte, erweist sich die Navigation durch diese mit einem Lederhandschuh als herausfordernd. Daher wurde die Entscheidung getroffen, lediglich fünf große rote Knöpfe zu verwenden, ähnlich denen auf der Karten-Seite, um einen Hydranten auszuwählen, der nicht der nächstgelegene ist. Sowohl die Appbar als auch der Hintergrund weisen keine Unterschiede zur Karten-Seite auf. Die Navigation hingegen ist farblich einfach invertiert.
