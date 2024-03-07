@@ -141,3 +141,15 @@ Trotz der Verfügbarkeit von Daten zu Wasserstellen wurde aufgrund bestehender D
 ## 7. Mögliche Erweiterungen
 
 Obgleich die Anwendung bereits den festgelegten Zielen gerecht wird, existieren dennoch Potenziale zur Weiterentwicklung dieses Projekts. Eine solche Verbesserung könnte beispielsweise die Implementierung einer Funktion sein, die es ermöglicht, auf die Positionen von Wasserstellen zu klicken, um detaillierte Informationen wie Standort und Rohrdurchmesser im Falle von Hydranten zu erhalten. Darüber hinaus wäre es von Vorteil, wenn die App die Möglichkeit böte, Adressdaten direkt einzufügen, was die Effizienz steigern und wertvolle Sekunden einsparen könnte. Eine zusätzliche Option könnte die Einrichtung einer Ansicht für die Einsatzleitung sein, die es der Leitung ermöglicht, den Feuerwehrleuten individuelle Positionen zuzuweisen. Dies könnte insbesondere bei größeren Einsätzen zu einer verbesserten Organisation beitragen.
+
+## 8. Links zu verwendeten Ressourcen
+
+- Nutzung von Github Copilot als Unterstützung bei der Entwicklung des Codes (https://copilot.github.com/)
+- Geolocator Bibliothek (https://pub.dev/packages/geolocator)
+- http Bibliothek (https://pub.dev/packages/http)
+- csv Bibliothek (https://pub.dev/packages/csv)
+- Url Launcher Bibliothek (https://pub.dev/packages/url_launcher)
+- Flutter Map Bibliothek (https://pub.dev/packages/flutter_map)
+- Latlong2 Bibliothek (https://pub.dev/packages/latlong2)
+- Nominatim API (https://nominatim.org/release-docs/develop)
+- OpenStreetMap Tile-Layer (https://tile.openstreetmap.de/)
