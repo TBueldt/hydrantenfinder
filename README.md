@@ -24,6 +24,44 @@ Die Funktion getCurrentPosition(), hingegen, erfasst die Standortdaten des GPS-S
 
 ### 3.2. http
 
+Die http-Bibliothek von Flutter ermöglicht es, HTTP-Anfragen aus einer Flutter-Anwendung heraus zu senden. Dies eröffnet die Möglichkeit, REST-APIs aufzurufen. Das Paket stellt verschiedene Anfragefunktionen bereit, darunter GET, POST, PUT und DELETE. Darüber hinaus können Header-Informationen extrahiert werden. In der vorliegenden Anwendung wird ausschließlich die GET-Methode verwendet, um eine API-Anfrage zu senden und die Ergebnisse zu empfangen.
+
+### 3.3. csv
+
+Die Flutter-Bibliothek “csv” ermöglicht Entwicklern das Lesen und Schreiben von CSV-Dateien in ihren Flutter-Anwendungen. CSV steht für “Comma-Separated Values” und ist ein einfaches Dateiformat, das zur Speicherung von tabellarischen Daten in Textform verwendet wird. Die “csv”-Bibliothek stellt verschiedene Funktionen zum Parsen und Konvertieren von CSV-Dateien zur Verfügung.
+
+In der betreffenden Anwendung wird die Funktion CsvToListConverter() verwendet, welche die CSV-Datei in eine Liste umwandelt. Als Parameter wird der “fieldDelimiter” angegeben. Im Anschluss wird die Unterfunktion convert() aufgerufen, bei der der Parameter der zu konvertierenden Datei angegeben wird.
+
+### 3.4. URL Launcher
+
+“url_launcher” ist eine Flutter-Bibliothek, die Entwicklern die Möglichkeit bietet, URLs zu öffnen, E-Mails zu versenden, Anrufe zu tätigen und SMS-Nachrichten zu senden. Sie stellt eine plattformübergreifende Schnittstelle zur Verfügung, um externe Ressourcen von Flutter-Anwendungen aus zu öffnen und zu interagieren.
+
+In der betreffenden Anwendung wird ausschließlich die Funktion launch() verwendet. Obwohl diese Funktion in neueren Versionen als veraltet gilt, ist sie notwendig, um die Anwendung auf Android 10 lauffähig zu machen. Bei der Verwendung neuerer Versionen wäre es jedoch ratsam, launch() durch launchUrl() zu ersetzen.
+
+### 3.5. Flutter Map
+
+“Flutter Map” ist ein Flutter-Paket, das Entwicklern eine einfache Integration von Karten in ihre Anwendungen ermöglicht. Es bietet eine Reihe von Funktionen, darunter anpassbare Kartenansichten, Interaktivität durch Zoomen und Verschieben, die Möglichkeit, Marker und Overlays zu platzieren, sowie die Integration mit anderen Flutter-Paketen für erweiterte Funktionen. Mit “Flutter Map” können Entwickler maßgeschneiderte und interaktive Kartenanwendungen erstellen, die auf die spezifischen Bedürfnisse ihrer Benutzer zugeschnitten sind. Im Gegensatz zu anderen Kartenpaketen erfordert dieses Paket die Verwendung eines Tile-Layer-Distributors. Dies bietet zwar eine größere Auswahl, kann jedoch auch anfälliger für Probleme sein.
+
+In der betreffenden Anwendung werden die Funktionen dieses Pakets nahezu vollständig genutzt. Als Tile-Distributor wurde der OpenStreetMap Tile-Layer verwendet. Für die Marker wurden eigens erstellte Bilder verwendet.
+
+### 3.6. Latlong2
+
+Das Paket “latlong2” stellt eine Klasse namens LatLng zur Verfügung, die, ähnlich wie im Paket “latlong”, ein Paar von Breiten- und Längengraden repräsentiert. Diese Klasse ermöglicht es Entwicklern, geographische Punkte zu definieren und verschiedene Operationen durchzuführen, wie beispielsweise das Berechnen von Entfernungen zwischen Punkten, das Bestimmen von Richtungen und das Arbeiten mit verschiedenen geographischen Formaten.
+
+In der betreffenden Anwendung dient dies lediglich als Grundbaustein für die Bibliothek “Flutter Map” und hat ansonsten keinen eigenständigen Nutzen.
+
+### 3.7. Nominatim
+
+Die Nominatim-API, eine kostenfreie Schnittstelle basierend auf OpenStreetMap, bietet Entwicklern die Möglichkeit, geographische Daten zu extrahieren. Sie ermöglicht Nutzern die Durchführung von umgekehrter Geokodierung (die Umwandlung von Koordinaten in menschenlesbare Adressen), Geokodierung (die Konversion von Adressen in Koordinaten), die Suche nach Orten und das Abrufen von Postleitzahlen. Die API ist öffentlich zugänglich und in ihrer Grundversion vollständig kostenfrei. Abhängig von den individuellen Anforderungen kann die Rückgabe entweder als GeoJson, Json oder XML Datei erfolgen.
+
+In der vorliegenden Anwendung wird ausschließlich die Standard-Geokodierung verwendet, um Adresseneingaben in Koordinaten zu konvertieren. Die bevorzugte Rückgabeformat ist JSON, da dieses Format eine einfache Weiterverarbeitung ermöglicht.
+
+### 3.8. OpenStreetMap Tile-Layer
+
+Das OpenStreetMap Tile-Layer ist ein Verfahren zur Darstellung von OpenStreetMap-Daten in einer Anwendung. Es funktioniert durch die Darstellung von kleinen quadratischen Bildern, sogenannten Kacheln, die zusammengesetzt eine vollständige Karte ergeben. Die Kacheln repräsentieren verschiedene Abschnitte der Karte und werden kontinuierlich dynamisch geladen.
+
+Die Integration erfolgt über den Link https://tile.openstreetmap.org/{z}/{x}/{y}.png, wobei {z} die Zoomstufe und {x} und {y} die horizontalen und vertikalen Koordinaten der Kacheln darstellen, die die Position auf der Karte angeben.
+
 ## 4. Ablauf des Programms
 ![Fließdiagramm](fließdiagramm.png)
 
