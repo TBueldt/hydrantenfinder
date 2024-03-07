@@ -12,6 +12,41 @@ Die primäre Anforderung besteht darin, eine App zur vereinfachten Suche nach Hy
 
 Um einen Feuerwehreinsatz optimal zu unterstützen, ist es von entscheidender Bedeutung, dass die App schnell und möglichst stabil funktioniert. Abstürze und lange Ladezeiten können im Ernstfall Menschenleben gefährden, daher ist es unerlässlich, solche Probleme zu vermeiden. Darüber hinaus muss die App mit Android 10 kompatibel sein, um eine möglichst breite Nutzerbasis unter den Feuerwehrleuten zu gewährleisten und gleichzeitig die Integration neuester Sicherheitsfunktionen zu ermöglichen.
 
+## 2. Der Designprozess und die zugrundeliegenden Konzepte des Enddesigns
+
+Im Zuge des Designprozesses unserer App wurden drei zentrale Ziele festgelegt. Erstens, die Implementierung von ausreichend großen Bedienelementen, um eine problemlose Interaktion auch mit Lederhandschuhen zu ermöglichen. Zweitens, die Etablierung einer einheitlichen Farbstruktur, um die Benutzerfreundlichkeit und Übersichtlichkeit zu optimieren. Drittens, die Reduzierung auf das Wesentliche, um eine klare und übersichtliche Benutzeroberfläche zu gewährleisten. Diese zielgerichteten Designentscheidungen tragen dazu bei, die Benutzererfahrung zu verbessern und die Effizienz der App zu steigern.
+
+## 2.1 Gestaltung der Karten-Seite
+
+![Erster-Entwurf](Skizze SW-Projekt.png)
+*Erster Entwurf der Kartenseite*
+
+![Mockup Karte](Mockup Karte.png)
+*Mockup der Kartenseite*
+
+![Endgültige Seite Karte](Endgültige Seite Karte.png)
+*Endgültiges Design der Kartenseite*
+
+Die Gestaltung der Karten-Seite ist in vier Hauptbereiche unterteilt: die Appbar, die Navigation, den Weiterleitungsknopf und die Karte selbst.
+
+Die Appbar besteht aus einem Icon-Button und einem Suchfeld. Der Icon-Button verwendet ein standardmäßiges location_searching Icon aus der Material-Bibliothek. Um eine konsistente Farbstruktur zu gewährleisten, sind alle ausführbaren Buttons in Rot gehalten, einschließlich dieses Icon-Buttons. Mit einer Größe von 50 Pixeln erfüllt er zudem das Designziel der großen Buttons. Das Suchfeld hingegen ist in Schwarz-Weiß gehalten, was zwar nicht der einheitlichen Farbstruktur entspricht, aber einen besseren Wiedererkennungswert bietet.
+
+Die Navigation besteht aus zwei Elevated Buttons: dem Button “Karte”, der hellblau ist und daher nicht ausführbar ist, und dem Button “Liste”, der rot und somit ausführbar ist.
+
+Der Weiterleitungsknopf ist ebenfalls rot und daher drückbar. Er ist als großes Quadrat gestaltet, um das Ziel der Bedienbarkeit mit Lederhandschuhen zu erfüllen. Innerhalb dieses Quadrats befinden sich zwei Zeilen: In der ersten Zeile wird die Art der Wasserstelle (meist Hydranten, aber auch Brunnen oder Zisternen) genannt, in der zweiten Zeile wird die Entfernung in Metern angegeben. Die Angabe in Metern ist sinnvoll, da Hydranten in offenen Wohngebieten maximal 140 Meter voneinander entfernt sein dürfen. Auf der Karten-Seite wird nur der nächstgelegene Hydrant angezeigt.
+
+Die Karte selbst besteht aus dem Tile-Layer von OpenStreetMap und sechs verschiedenen Markern. Fünf der Marker sind selbst erstellte Hydrantenschilder, die die einzelnen Hydranten nach Entfernung sortieren. Der verbleibende Marker ist ein location_on Icon aus der Material-Bibliothek, das den gesuchten oder aktuellen Standort anzeigt.
+
+### 2.2. Gestaltung der Listen-Seite
+
+![Mockup Liste](Mockup Liste.png)
+*Mockup der Listen-Seite*
+
+![Endgültige Seite Liste](Endgültige Seite Liste.png)
+*Endgültiges Design der Listenseite*
+
+Die Liste wurde konzipiert, um die Auswahl von vier zusätzlichen Hydranten zu ermöglichen. Obwohl eine umfangreichere Liste mit mehr Hydranten theoretisch sinnvoll erscheinen könnte, erweist sich die Navigation durch diese mit einem Lederhandschuh als herausfordernd. Daher wurde die Entscheidung getroffen, lediglich fünf große rote Knöpfe zu verwenden, ähnlich denen auf der Karten-Seite, um einen Hydranten auszuwählen, der nicht der nächstgelegene ist. Sowohl die Appbar als auch der Hintergrund weisen keine Unterschiede zur Karten-Seite auf. Die Navigation hingegen ist farblich einfach invertiert.
+
 ## 3. Externe Ressourcen
 
 ### 3.1. Geolocator
