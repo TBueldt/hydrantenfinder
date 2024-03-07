@@ -21,7 +21,7 @@ Im Zuge des Designprozesses unserer App wurden drei zentrale Ziele festgelegt. E
 ![Erster-Entwurf](Skizze SW-Projekt.png)
 *Erster Entwurf der Kartenseite*
 
-![Mockup Karte](Mockup Karte.png)
+![Mockup Karte](MockupKarte.png)
 *Mockup der Kartenseite*
 
 ![Endgültige Seite Karte](Endgültige Seite Karte.png)
@@ -39,7 +39,7 @@ Die Karte selbst besteht aus dem Tile-Layer von OpenStreetMap und sechs verschie
 
 ### 2.2. Gestaltung der Listen-Seite
 
-![Mockup Liste](Mockup Liste.png)
+![Mockup Liste](MockupListe.png)
 *Mockup der Listen-Seite*
 
 ![Endgültige Seite Liste](Endgültige Seite Liste.png)
