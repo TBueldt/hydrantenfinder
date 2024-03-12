@@ -1,6 +1,6 @@
 import 'package:Hydrantenfinder/algorithmen.dart';
 import 'package:flutter/material.dart';
-import 'package:Hydrantenfinder/Karte.dart';
+import 'package:Hydrantenfinder/karte.dart';
 
 class Suchfeld extends StatefulWidget {
   @override
