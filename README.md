@@ -189,3 +189,4 @@ Obgleich die Anwendung bereits den festgelegten Zielen gerecht wird, existieren 
 - Bilderquelle des Titelbildes , Henry Mühlpfordt, 2009 (https://commons.wikimedia.org/wiki/File:Hydrantenschild_Beispielgrafik_2009-01-29.svg)
 - https://flutter.dev/
 - https://dart.dev/overview
+- https://developer.android.com/studio
