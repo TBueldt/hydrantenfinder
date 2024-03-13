@@ -46,10 +46,43 @@ Die Karte selbst besteht aus dem Tile-Layer von OpenStreetMap und sechs verschie
 *Endgültiges Design der Listenseite*
 
 Die Liste wurde konzipiert, um die Auswahl von vier zusätzlichen Hydranten zu ermöglichen. Obwohl eine umfangreichere Liste mit mehr Hydranten theoretisch sinnvoll erscheinen könnte, erweist sich die Navigation durch diese mit einem Lederhandschuh als herausfordernd. Daher wurde die Entscheidung getroffen, lediglich fünf große rote Knöpfe zu verwenden, ähnlich denen auf der Karten-Seite, um einen Hydranten auszuwählen, der nicht der nächstgelegene ist. Sowohl die Appbar als auch der Hintergrund weisen keine Unterschiede zur Karten-Seite auf. Die Navigation hingegen ist farblich einfach invertiert.
+## 3. Technologien für die Mobile-Entwicklung
 
-## 3. Externe Ressourcen
+### 3.1. Android Studio
 
-### 3.1. Geolocator
+Android Studio ist eine spezialisierte Integrierte Entwicklungsumgebung (IDE) für die Entwicklung von Android-Applikationen. Es zeichnet sich durch eine intuitive Benutzeroberfläche, ein umfangreiches Werkzeugset und eine Vielzahl von Funktionen aus, die Entwicklern eine robuste Plattform für die Erstellung von qualitativ hochwertigen Anwendungen bieten.
+
+Die IDE beinhaltet einen fortschrittlichen Code-Editor, der Funktionen wie Syntaxhervorhebung, Code-Vervollständigung und Fehlererkennung bietet, um die Produktivität der Entwickler zu steigern. Darüber hinaus verfügt Android Studio über einen integrierten Emulator, der es Entwicklern ermöglicht, ihre Apps auf verschiedenen Android-Geräten zu testen, um eine optimale Leistung und Kompatibilität zu gewährleisten.
+
+Durch die Integration von Google-Diensten wie Firebase und Google Cloud Platform bietet Android Studio Entwicklern Zugang zu einer Vielzahl von Funktionen, einschließlich Analysetools, Cloud-Speicher und Benutzerauthentifizierung.
+
+Android Studio unterstützt eine Reihe von Programmiersprachen, darunter Java, Kotlin, Dart und C++, was Entwicklern die Flexibilität gibt, die Sprache zu wählen, die ihren Anforderungen am besten entspricht.
+
+Zusammenfassend lässt sich sagen, dass Android Studio eine umfassende Entwicklungsumgebung bietet, die es Entwicklern ermöglicht, qualitativ hochwertige Android-Apps effizient zu erstellen, zu testen und zu veröffentlichen. Es ist ein unverzichtbares Werkzeug für jeden, der in der Android-Entwicklung tätig ist.
+
+### 3.2 Dart
+
+Dart ist eine von Google entwickelte, leistungsstarke Programmiersprache, die speziell für die Erstellung von plattformübergreifenden Anwendungen konzipiert wurde. Sie ermöglicht Entwicklern, effizient und effektiv Anwendungen für mobile, webbasierte und Desktop-Plattformen zu erstellen.
+
+Die Sprache zeichnet sich durch ihre Einfachheit und Geschwindigkeit aus und bietet eine optionale statische Typisierung, die zur Vereinfachung der Entwicklung und Wartung von Code beiträgt und die Fehlerbehebung erleichtert.
+
+Darüber hinaus wird Dart häufig in Verbindung mit Flutter verwendet, einem von Google entwickelten Framework für die Entwicklung plattformübergreifender Benutzeroberflächen. Die Kombination von Dart und Flutter ermöglicht eine schnelle Entwicklung und eine konsistente Benutzererfahrung auf verschiedenen Plattformen.
+
+### 3.3. Flutter
+
+Flutter ist ein ebenfalls von Google entwickeltes, plattformübergreifendes UI-Toolkit, das Entwicklern die Erstellung ansprechender und leistungsstarker Benutzeroberflächen für mobile, webbasierte und Desktop-Anwendungen ermöglicht. Es erlaubt die Erstellung von hochgradig anpassbaren Benutzeroberflächen, die auf verschiedenen Betriebssystemen konsistent funktionieren.
+
+Das Framework nutzt die Programmiersprache Dart, die sich durch ihre Einfachheit, Geschwindigkeit und Effizienz auszeichnet. Dart unterstützt sowohl Just-in-Time- (JIT) als auch Ahead-of-Time- (AOT) Kompilierung, was zu einer optimierten Leistung und schnelleren Ausführung von Anwendungen führt.
+
+Flutter stellt eine Vielzahl von vorgefertigten Widgets und Tools zur Verfügung, die die Entwicklung beschleunigen und die Benutzerfreundlichkeit verbessern. Darüber hinaus ermöglicht Flutter durch die Funktion des Hot Reloads eine schnelle Iteration und konsistente Entwicklung, indem es Entwicklern erlaubt, Änderungen in Echtzeit zu sehen, ohne die App neu starten zu müssen.
+
+Dank seiner plattformübergreifenden Natur ermöglicht Flutter Entwicklern die Verwendung einer einzigen Codebasis für verschiedene Plattformen, was die Entwicklung und Wartung von Anwendungen vereinfacht und Kosten reduziert.
+
+Zusammenfassend bietet Flutter eine effektive Plattform für die Entwicklung von plattformübergreifenden Anwendungen mit einer eleganten Benutzeroberfläche und guter Performance. Es ist ein nützliches Werkzeug für Entwickler, die an der Erstellung von Android-Apps arbeiten.
+
+## 4. Externe Ressourcen
+
+### 4.1. Geolocator
 
 Das Geolocator-Paket von Flutter, eine hochentwickelte Bibliothek von Google, bietet eine Vielzahl von Standortfunktionen für Flutter-Anwendungen. In der vorliegenden Anwendung wurden insbesondere die Funktionen distanceBetween() und getCurrentPosition() implementiert.
 
@@ -57,48 +90,48 @@ Die Funktion distanceBetween() berechnet die direkte Entfernung zwischen zwei ge
 
 Die Funktion getCurrentPosition(), hingegen, erfasst die Standortdaten des GPS-Sensors des Smartphones und konvertiert diese Daten in Koordinaten. Der einzige Parameter, der hier angegeben werden kann, ist die desiredAccuracy, die die gewünschte Genauigkeit der Standortdaten bestimmt. Diese Funktion ermöglicht es der Anwendung, den aktuellen Standort des Benutzers mit der angegebenen Genauigkeit zu ermitteln.
 
-### 3.2. http
+### 4.2. http
 
 Die http-Bibliothek von Flutter ermöglicht es, HTTP-Anfragen aus einer Flutter-Anwendung heraus zu senden. Dies eröffnet die Möglichkeit, REST-APIs aufzurufen. Das Paket stellt verschiedene Anfragefunktionen bereit, darunter GET, POST, PUT und DELETE. Darüber hinaus können Header-Informationen extrahiert werden. In der vorliegenden Anwendung wird ausschließlich die GET-Methode verwendet, um eine API-Anfrage zu senden und die Ergebnisse zu empfangen.
 
-### 3.3. csv
+### 4.3. csv
 
 Die Flutter-Bibliothek “csv” ermöglicht Entwicklern das Lesen und Schreiben von CSV-Dateien in ihren Flutter-Anwendungen. CSV steht für “Comma-Separated Values” und ist ein einfaches Dateiformat, das zur Speicherung von tabellarischen Daten in Textform verwendet wird. Die “csv”-Bibliothek stellt verschiedene Funktionen zum Parsen und Konvertieren von CSV-Dateien zur Verfügung.
 
 In der betreffenden Anwendung wird die Funktion CsvToListConverter() verwendet, welche die CSV-Datei in eine Liste umwandelt. Als Parameter wird der “fieldDelimiter” angegeben. Im Anschluss wird die Unterfunktion convert() aufgerufen, bei der der Parameter der zu konvertierenden Datei angegeben wird.
 
-### 3.4. URL Launcher
+### 4.4. URL Launcher
 
 “url_launcher” ist eine Flutter-Bibliothek, die Entwicklern die Möglichkeit bietet, URLs zu öffnen, E-Mails zu versenden, Anrufe zu tätigen und SMS-Nachrichten zu senden. Sie stellt eine plattformübergreifende Schnittstelle zur Verfügung, um externe Ressourcen von Flutter-Anwendungen aus zu öffnen und zu interagieren.
 
 In der betreffenden Anwendung wird ausschließlich die Funktion launch() verwendet. Obwohl diese Funktion in neueren Versionen als veraltet gilt, ist sie notwendig, um die Anwendung auf Android 10 lauffähig zu machen. Bei der Verwendung neuerer Versionen wäre es jedoch ratsam, launch() durch launchUrl() zu ersetzen.
 
-### 3.5. Flutter Map
+### 4.5. Flutter Map
 
 “Flutter Map” ist ein Flutter-Paket, das Entwicklern eine einfache Integration von Karten in ihre Anwendungen ermöglicht. Es bietet eine Reihe von Funktionen, darunter anpassbare Kartenansichten, Interaktivität durch Zoomen und Verschieben, die Möglichkeit, Marker und Overlays zu platzieren, sowie die Integration mit anderen Flutter-Paketen für erweiterte Funktionen. Mit “Flutter Map” können Entwickler maßgeschneiderte und interaktive Kartenanwendungen erstellen, die auf die spezifischen Bedürfnisse ihrer Benutzer zugeschnitten sind. Im Gegensatz zu anderen Kartenpaketen erfordert dieses Paket die Verwendung eines Tile-Layer-Distributors. Dies bietet zwar eine größere Auswahl, kann jedoch auch anfälliger für Probleme sein.
 
 In der betreffenden Anwendung werden die Funktionen dieses Pakets nahezu vollständig genutzt. Als Tile-Distributor wurde der OpenStreetMap Tile-Layer verwendet. Für die Marker wurden eigens erstellte Bilder verwendet.
 
-### 3.6. Latlong2
+### 4.6. Latlong2
 
 Das Paket “latlong2” stellt eine Klasse namens LatLng zur Verfügung, die, ähnlich wie im Paket “latlong”, ein Paar von Breiten- und Längengraden repräsentiert. Diese Klasse ermöglicht es Entwicklern, geographische Punkte zu definieren und verschiedene Operationen durchzuführen, wie beispielsweise das Berechnen von Entfernungen zwischen Punkten, das Bestimmen von Richtungen und das Arbeiten mit verschiedenen geographischen Formaten.
 
 In der betreffenden Anwendung dient dies lediglich als Grundbaustein für die Bibliothek “Flutter Map” und hat ansonsten keinen eigenständigen Nutzen.
 
-### 3.7. Nominatim
+### 4.7. Nominatim
 
 Die Nominatim-API, eine kostenfreie Schnittstelle basierend auf OpenStreetMap, bietet Entwicklern die Möglichkeit, geographische Daten zu extrahieren. Sie ermöglicht Nutzern die Durchführung von umgekehrter Geokodierung (die Umwandlung von Koordinaten in menschenlesbare Adressen), Geokodierung (die Konversion von Adressen in Koordinaten), die Suche nach Orten und das Abrufen von Postleitzahlen. Die API ist öffentlich zugänglich und in ihrer Grundversion vollständig kostenfrei. Abhängig von den individuellen Anforderungen kann die Rückgabe entweder als GeoJson, Json oder XML Datei erfolgen.
 
 In der vorliegenden Anwendung wird ausschließlich die Standard-Geokodierung verwendet, um Adresseneingaben in Koordinaten zu konvertieren. Die bevorzugte Rückgabeformat ist JSON, da dieses Format eine einfache Weiterverarbeitung ermöglicht.
 
-### 3.8. OpenStreetMap Tile-Layer
+### 4.8. OpenStreetMap Tile-Layer
 
 Das OpenStreetMap Tile-Layer ist ein Verfahren zur Darstellung von OpenStreetMap-Daten in einer Anwendung. Es funktioniert durch die Darstellung von kleinen quadratischen Bildern, sogenannten Kacheln, die zusammengesetzt eine vollständige Karte ergeben. Die Kacheln repräsentieren verschiedene Abschnitte der Karte und werden kontinuierlich dynamisch geladen.
 
 Die Integration erfolgt über den Link https://tile.openstreetmap.org/{z}/{x}/{y}.png, wobei {z} die Zoomstufe und {x} und {y} die horizontalen und vertikalen Koordinaten der Kacheln darstellen, die die Position auf der Karte angeben.
 
-## 4. Ablauf des Programms
-![Fließdiagramm](fließdiagramm.png)
+## 5. Ablauf des Programms
+![Flussdiagramm](flussdiagramm.png)
 
 Der Mechanismus zur Suche von Hydranten in der Anwendung wird entweder durch eine Eingabe im Suchfeld oder durch das Betätigen des Standort-Buttons initiiert.
 
@@ -114,35 +147,35 @@ Schließlich ruft _csvZuListeUmwandelnUndWeiterverarbeiten() die Funktion _daten
 
 Nach Abschluss aller Funktionsaufrufe wird die Liste der Variable Hydrant zugewiesen und schließlich zu einem Singleton umgewandelt, um die öffentliche Aufrufbarkeit der Variable zu ermöglichen. Abschließend können die Daten aus der Variable Hydrant sowohl für die Karte als auch für die Liste verwendet werden.
 
-## 5. Durchführung von Laufzeittests
+## 6. Durchführung von Laufzeittests
 
 Die aus dem Code resultierende APK wurde auf insgesamt drei Geräten, die vier verschiedene Betriebssysteme nutzen, getestet. Der Testlauf auf dem Pixel 5 wurde jedoch ausschließlich auf einem Emulator innerhalb der Android Studio IDE durchgeführt. Das Xiaomi Poco X3 Pro wurde von einer Person getestet, die bereits mit der Anwendung der App vertraut war. Im Gegensatz dazu wurde der Testlauf auf dem Xiaomi Mi 11T von einer Person durchgeführt, die zuvor keine Erfahrung mit der App hatte. Aufgrund dieser unterschiedlichen Voraussetzungen ergeben sich drei verschiedene Testszenarien, die sich hinsichtlich ihrer Schwerpunkte erheblich voneinander unterscheiden.
 
-### 5.1. Google Pixel 5 Android 10 und Android 13
+### 6.1. Google Pixel 5 Android 10 und Android 13
 
 Die Anwendung, die speziell für dieses Gerät entwickelt wurde, wies weder im Design noch in der Funktion gravierende Fehler auf. Dennoch war die Startzeit der App bemerkenswert lang. Sobald die App jedoch installiert war, arbeiteten alle Funktionen mit hoher Geschwindigkeit. Sowohl die Eingabe aller Buchstaben als auch die Lokalisierung des im Emulator eingetragenen Standortes funktionierten einwandfrei. Eine Internetverbindung zur Nutzung des OpenStreetMap Tile-Layers und der Nominatim API war ebenfalls gegeben. Es ist jedoch zu beachten, dass das Internet des Emulators nicht funktioniert, sollte das Notebook kurzzeitig keine Internetverbindung haben.
 
-### 5.2. Xiaomi Poco X3 Pro Android 11
+### 6.2. Xiaomi Poco X3 Pro Android 11
 
 Der Testlauf mit dem Poco X3 Pro verlief äußerst erfolgreich. Trotz der Einschränkungen beim Sideloading konnte die APK ohne größere Schwierigkeiten installiert werden. Die Anfrage nach Standortberechtigungen wurde zügig gestellt und nach Erhalt der Zustimmung konnten alle Funktionen der App problemlos genutzt werden. Ein geringfügiges Problem trat jedoch bei der Suchleiste auf, wo der Begriff „Suche……“ innerhalb der Leiste leicht nach oben verschoben war. Dies beeinträchtigt die Nutzung nicht, sollte aber bei einer möglichen Weiterentwicklung behoben werden. Ein weiteres kleines Problem besteht darin, dass die Standortabfrage etwa 2-3 Sekunden dauert. Dies ist im Vergleich zur vorherigen Suche immer noch sehr kurz, kann aber schnell zu einer Geduldsprobe werden, wenn man im Einsatz ist. Der Fehler dürfte hier vermutlich auf die eingestellte, sehr hohe Genauigkeit zurückzuführen sein. Daraus ergibt sich das Problem, dass das optimale Gleichgewicht zwischen Genauigkeit und Geschwindigkeit noch nicht gefunden wurde.
 
-### 5.3. Xiaomi Mi 11T Android 13
+### 6.3. Xiaomi Mi 11T Android 13
 
 Im Unterschied zu den anderen Tests wurde dieser Test mit einer Person durchgeführt, die zuvor noch keine Erfahrung mit der App hatte. Daher lag der Fokus hier insbesondere auf der Intuitivität und Benutzerfreundlichkeit. Zudem ermöglichte dieser Ansatz die Identifizierung weiterer Fehler, da eine potenzielle Fehlbenutzung durch den unerfahrenen Nutzer Probleme aufwerfen kann, die bei korrekter Nutzung nicht auftreten würden. In diesem Fall wurden durch die Nutzung keine zusätzlichen Fehler entdeckt. Auch hier war das „Suche……“ leicht verschoben und die Lokalisierung dauerte länger als optimal. Dennoch verlief die Nutzung insgesamt sehr erfolgreich. Alle Funktionen wurden ohne vorherige Einweisung sofort gefunden und funktionierten einwandfrei. Mehrere Feuerwehrleute, die die App auf dem gleichen Smartphone testeten, hoben insbesondere die einfache Handhabung auch mit einem Lederhandschuh hervor. Daher ist eine Betriebsanleitung für die aktuelle Version der App nicht erforderlich.
 
-### 5.4. Schlussfolgerungen aus den Tests
+### 6.4. Schlussfolgerungen aus den Tests
 
 Die durchgeführten Tests haben bestätigt, dass die App, abgesehen von einigen geringfügigen Designfehlern, einwandfrei funktioniert. Die Tests haben zudem gezeigt, dass das Ziel, eine äußerst einfache und benutzerfreundliche App zu entwickeln, die sogar mit einem Feuerwehrhandschuh bedient werden kann, erreicht wurde. Durch die Durchführung von Tests mit mehreren Android-Versionen wurde außerdem sichergestellt, dass die App plattformübergreifend einsetzbar ist.
 
-## 6. Herausforderungen in der Entwicklungsphase
+## 7. Herausforderungen in der Entwicklungsphase
 
 Trotz der Verfügbarkeit von Daten zu Wasserstellen wurde aufgrund bestehender Datenschutzgesetze die Bereitstellung dieser Informationen in CSV-Form abgelehnt. Daher wurde auf öffentlich zugängliche Quellen zurückgegriffen und 25 Wasserstellen manuell ausgewählt. Die Authentizität der Daten wurde überprüft, was einen eingeschränkten Testbetrieb ermöglichte. Eine Erprobung mit mehreren tausend Wasserstellen war jedoch leider nicht möglich. Daher kann für die Funktionalität bei einer Größenordnung von über 25 Wasserstellen keine Garantie übernommen werden.
 
-## 7. Mögliche Erweiterungen
+## 8. Mögliche Erweiterungen
 
 Obgleich die Anwendung bereits den festgelegten Zielen gerecht wird, existieren dennoch Potenziale zur Weiterentwicklung dieses Projekts. Eine solche Verbesserung könnte beispielsweise die Implementierung einer Funktion sein, die es ermöglicht, auf die Positionen von Wasserstellen zu klicken, um detaillierte Informationen wie Standort und Rohrdurchmesser im Falle von Hydranten zu erhalten. Darüber hinaus wäre es von Vorteil, wenn die App die Möglichkeit böte, Adressdaten direkt einzufügen, was die Effizienz steigern und wertvolle Sekunden einsparen könnte. Eine zusätzliche Option könnte die Einrichtung einer Ansicht für die Einsatzleitung sein, die es der Leitung ermöglicht, den Feuerwehrleuten individuelle Positionen zuzuweisen. Dies könnte insbesondere bei größeren Einsätzen zu einer verbesserten Organisation beitragen.
 
-## 8. Links zu verwendeten Ressourcen
+## 9. Links zu verwendeten Ressourcen
 
 - Nutzung von Github Copilot als Unterstützung bei der Entwicklung des Codes (https://copilot.github.com/)
 - Geolocator Bibliothek (https://pub.dev/packages/geolocator)
@@ -153,3 +186,6 @@ Obgleich die Anwendung bereits den festgelegten Zielen gerecht wird, existieren 
 - Latlong2 Bibliothek (https://pub.dev/packages/latlong2)
 - Nominatim API (https://nominatim.org/release-docs/develop)
 - OpenStreetMap Tile-Layer (https://tile.openstreetmap.de/)
+- Bilderquelle des Titelbildes , Henry Mühlpfordt, 2009 (https://commons.wikimedia.org/wiki/File:Hydrantenschild_Beispielgrafik_2009-01-29.svg)
+- https://flutter.dev/
+- https://dart.dev/overview
